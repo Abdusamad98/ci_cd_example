@@ -23,24 +23,37 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
+          // TextButton(
+          //   onPressed: () {
+          //     String uril1 = Uri(
+          //       path: "/detail",
+          //       queryParameters: {
+          //         "counter": "200",
+          //         "lastname": "Abdulloh",
+          //       },
+          //     ).toString();
+          //
+          //     String url2 = "/detail?lastname=Abdulloh&counter=200";
+          //
+          //     context.go(
+          //       uril1,
+          //       extra: voidCallback,
+          //     );
+          //   },
+          //   child: Text("Detail Screen 1"),
+          // ),
           TextButton(
-              onPressed: () {
-                String uril1 = Uri(
-                  path: "/detail",
-                  queryParameters: {
-                    "counter": "200",
-                    "lastname": "Abdulloh",
-                  },
-                ).toString();
-
-                String url2 = "/detail?lastname=Abdulloh&counter=200";
-
-                context.go(
-                  uril1,
-                  extra: voidCallback,
-                );
-              },
-              child: Text("Detail Screen"))
+            onPressed: () {
+              context.goNamed(
+                "details",
+                pathParameters: {
+                  "counter": "200",
+                  // "lastname": "Abdulloh",
+                },
+              );
+            },
+            child: Text("Detail Screen 2"),
+          )
         ],
       ),
     );

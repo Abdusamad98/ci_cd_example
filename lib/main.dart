@@ -10,15 +10,18 @@ void main() {
 final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
+      name: "initial",
       path: "/",
       builder: (context, state) => HomeScreen(),
       routes: [
         GoRoute(
-          path: "detail",
+          name: "details",
+          path: "detail/:counter",
           builder: (context, state)  {
-         debugPrint("PATH PARAMETERS 1: ${state.uri.queryParameters["lastname"]}");
-         debugPrint("PATH PARAMETERS 2: ${state.path}");
-           return DetailScreen(counter: int.parse(state.uri.queryParameters["counter"] as String),);
+            //,
+         // debugPrint("PATH PARAMETERS 1: ${state.uri.queryParameters["lastname"]}");
+      //    debugPrint("PATH PARAMETERS 2: ${state.pathParameters}");
+           return DetailScreen(counter: int.parse(state.pathParameters["counter"] as String));
           }//(state.extra as Map<String,dynamic>)["counter"]
         )
       ],

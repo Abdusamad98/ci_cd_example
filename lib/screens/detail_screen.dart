@@ -13,10 +13,10 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
+    // ${(GoRouterState.of(context).extra as Function)(12, 13)}
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            "Detail Screen: ${(GoRouterState.of(context).extra as Function)(12, 13)}"),
+        title: Text("Detail Screen"),
       ),
       body: Column(
         children: [
